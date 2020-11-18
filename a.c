@@ -1,8 +1,11 @@
 #include<stdio.h>
+#include<stdlib.h>
 int main()
 {
-    int i,j,t,a[100000],count=0,n;
+    int n;
     scanf("%d",&n);
+    int i,j,t,count=0;
+    int * a = (int *)malloc(sizeof(int)*n);//Instead of assigning random big value we can allocate memory dynamically
     for(i=0;i<n;i++)
     {
         scanf("%d",&a[i]);
@@ -26,6 +29,7 @@ int main()
         count+=1;
     }
     printf("%d",count);
+    free(a);//to avoid memory leak
     return 0;
 
 }
